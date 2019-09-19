@@ -2,7 +2,7 @@
 
 namespace Model\Dao;
 
-class Group extends Dao
+class Community extends Dao
 {
 
 

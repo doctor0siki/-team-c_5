@@ -8,6 +8,10 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
 
     $data = [];
 
+    $group = new User($this->db);
+
+    $result = $group->select($data,date,DESC,5,false);
+
     // Render index view
     return $this->view->render($response, 'profile_setting/index.twig', $data);
 });
