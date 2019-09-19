@@ -12,11 +12,17 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-<div class="card border-secondary mb-3" style="max-width: 80vw;">
-    <div class="card-header">面白そうな合コンタイトル</div>
-    <div class="card-body text-secondary">
-        <h5 class="card-title">Secondary card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">合コンタイトル</h5>
+        <span class="badge badge-pill badge-primary" style="background-color:#df614a">Primary</span>
+        <p class="card-text">合コンのPR文章</p>
+    </div>
+    <div class="card-footer">
+      <div class="float-right">
+        <small class="text-muted">現在の参加</small>
+        <button type="button" class="btn btn-primary" style="background-color:#df614a;border:none;margin:0 2vw;">参加</button>
+      </div>
     </div>
 </div>
 {% endblock %}
