@@ -4,90 +4,84 @@
 {% endblock %}
 
 {% block page_content %}
-  <div class="row">
-    <div class="col-md-4 mb-3">
-      <label for="country">開催日</label>
-      <select class="custom-select d-block w-100" id="country" required>
-        <option value="">Choose...</option>
-        <option>2019/09/19</option>
-        <option>2019/09/20</option>
-        <option>2019/09/21</option>
-      </select>
-      <div class="invalid-feedback">
-        開催日を選択してください
+  <form id="joinGroup" method="POST" action="/join_group/">
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="kaisaibi">開催日</label>
+        <select class="custom-select d-block w-100" id="country" required>
+          <option value="">Choose...</option>
+          <option value="2019/09/19">2019/09/19</option>
+          <option value="2019/09/20">2019/09/20</option>
+          <option value="2019/09/21">2019/09/21</option>
+        </select>
+        <div class="invalid-feedback">
+          開催日を選択してください
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">希望する年齢層</label>
-      <select class="custom-select d-block w-100" id="state" required>
-        <option value="">Choose...</option>
-        <option>20~25</option>
-        <option>25~30</option>
-        <option>30~35</option>
-        <option>35~40</option>
-      </select>
-      <div class="invalid-feedback">
-        希望する年齢層を選択してください
+      <div class="col-md-4 mb-3">
+        <label for="kibou-nennrei">希望する年齢層</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choose...</option>
+          <option value="20~25">20~25</option>
+          <option value="25~30">25~30</option>
+          <option value="30~35">30~35</option>
+          <option value="35~40">35~40</option>
+        </select>
+        <div class="invalid-feedback">
+          希望する年齢層を選択してください
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">開催地域</label>
-      <select class="custom-select d-block w-100" id="state" required>
-        <option value="">Choose...</option>
-        <option>東京</option>
-        <option>大阪</option>
-        <option>名古屋</option>
-      </select>
-      <div class="invalid-feedback">
-        開催地域を選択してください
+      <div class="col-md-4 mb-3">
+        <label for="tiiki">開催地域</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choose...</option>
+          <option value="東京">東京</option>
+          <option value="大阪">大阪</option>
+          <option value="名古屋">名古屋</option>
+        </select>
+        <div class="invalid-feedback">
+          開催地域を選択してください
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">最大人数</label>
-      <select class="custom-select d-block w-100" id="state" required>
-        <option value="">Choose...</option>
-        <option>3人</option>
-        <option>5人</option>
-        <option>10人</option>
-      </select>
-      <div class="invalid-feedback">
-        最大人数を選択してください
+      <div class="col-md-4 mb-3">
+        <label for="saidaininnzuu">最大人数</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choose...</option>
+          <option value="3人">3人</option>
+          <option value="5人">5人</option>
+          <option value="10人">10人</option>
+        </select>
+        <div class="invalid-feedback">
+          最大人数を選択してください
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">目安価格</label>
-      <select class="custom-select d-block w-100" id="state" required>
-        <option value="">Choose...</option>
-        <option>5000円</option>
-        <option>8000円</option>
-        <option>10000円</option>
-      </select>
-      <div class="invalid-feedback">
-        目安目安を選択してください
+      <div class="col-md-4 mb-3">
+        <label for="meyasukakaku">目安価格</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choose...</option>
+          <option value="5000円">5000円</option>
+          <option value="8000円">8000円</option>
+          <option value="10000円">10000円</option>
+        </select>
+        <div class="invalid-feedback">
+          目安目安を選択してください
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">招待するエンターテイナー</label>
-      <select class="custom-select d-block w-100" id="state" required>
-        <option value="">Choose...</option>
-        <option>催眠術師</option>
-        <option>漫談家</option>
-        <option>マジシャン</option>
-      </select>
-      <div class="invalid-feedback">
-        Please provide a valid state.
+      <div class="col-md-4 mb-3">
+        <label for="entertainer">招待するエンターテイナー</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choose...</option>
+          <option value="催眠術師">催眠術師</option>
+          <option value="漫談家">漫談家</option>
+          <option value="マジシャン">マジシャン</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid state.
+        </div>
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">合コンPR</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <div class="invalid-feedback">
-        Please provide a valid state.
-      </div>
-    </div>
-    <hr class="mb-4">
-    <button class="btn btn-primary btn-lg btn-block" type="submit">合コンを検索！</button>
-  </form>
-</div></div>{% endblock %}
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="submit">合コンを検索！</button>
+    </form>
+  </div>
+</div>{% endblock %}
