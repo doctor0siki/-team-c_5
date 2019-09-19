@@ -21,6 +21,6 @@ $app->post('/join_group/', function (Request $request, Response $response) {
     //ユーザーDAOをインスタンス化
     $group = new Group($this->db);
 
-    $result = $group->select($data,"","",1,false)
+    $result = $group->select($data,"","",1,false);
 
 });
