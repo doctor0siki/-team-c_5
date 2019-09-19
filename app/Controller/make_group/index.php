@@ -25,4 +25,5 @@ $app->post('/make_group/', function (Request $request, Response $response) {
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $community->insert($data);
 
+    return $response->withRedirect('/');
 });
