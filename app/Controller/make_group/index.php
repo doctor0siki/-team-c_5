@@ -23,6 +23,6 @@ $app->post('/make_group/', function (Request $request, Response $response) {
     $community = new Community($this->db);
 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
-    $id = $group->insert($data);
+    $id = $community->insert($data);
 
 });
