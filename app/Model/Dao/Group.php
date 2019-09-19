@@ -2,7 +2,7 @@
 
 namespace Model\Dao;
 
-class User extends Dao
+class Group extends Dao
 {
 
 
