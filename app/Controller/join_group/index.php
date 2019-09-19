@@ -11,3 +11,17 @@ $app->get('/join_group/', function (Request $request, Response $response) {
     // Render index view
     return $this->view->render($response, 'join_group/index.twig', $data);
 });
+
+
+$app->post('/join_group/', function (Request $request, Response $response) {
+
+    //POSTされた内容を取得します
+    $data = $request->getParsedBody();
+
+    //ユーザーDAOをインスタンス化
+    $group = new Group($this->db);
+
+    //DBに登録をする。戻り値は自動発番されたIDが返ってきます
+    $id = $group->insert($data);
+
+});
