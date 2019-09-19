@@ -12,7 +12,17 @@
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-<div class="card">
+<div class="reserchbox"style="width:100%;">
+  <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;">再検索</button>
+</div>
+{% set lists = [
+{'id':0, 'title':"合コン１"},
+{'id':1, 'title':"合コン２"},
+{'id':2, 'title':"合コン３"},
+]%}
+
+{% for list in lists %}
+<div class="card" style="margin:3vh auto">
     <div class="card-body">
         <h5 class="card-title">合コンタイトル</h5>
         <span class="badge badge-pill badge-primary" style="background-color:#df614a">Primary</span>
@@ -25,6 +35,7 @@
       </div>
     </div>
 </div>
+{% endfor %}
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
