@@ -4,7 +4,16 @@
 {% endblock %}
 
 {% block page_content %}
-  <form id="joinGroup" method="POST" action="/join_group/">
+<style>
+  label{
+    border-left: solid 10px #df614a;padding-left:3px;
+  }
+</style>
+
+<h1 style="text-align:center;font-size:30px;margin:5vh 0;">
+  合コンを検索
+</h1>
+  <form id="joinGroup" method="POST" action="/join_group/" enctype="application/x-www-form-urlencoded">
 
     <div class="row">
       <div class="col-md-4 mb-3">
@@ -87,7 +96,8 @@
       </div>
 
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color:#df614a;border:none">合コンを検索！</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit"
+      style="background-color:#df614a;border:none;margin:5vh 0">合コンを検索！</button>
     </form>
   </div>
 </div>{% endblock %}

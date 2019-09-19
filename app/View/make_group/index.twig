@@ -4,16 +4,16 @@
 {% endblock %}
 
 {% block page_content %}
-<h1 style="text-align:center">
+<h1 style="text-align:center;font-size:30px;margin:5vh 0;">
   合コンを作成
 </h1>
-  <form id="makeGroup" method="POST" action="/make_group/">
+  <form id="makeGroup" method="POST" action="/make_group/" enctype="application/x-www-form-urlencoded">
 
     <div class="row">
       <div class="col-md-4 mb-3">
         <div class="form-group">
           <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">合コン名</label>
-          <textarea class="form-control" id="group_name" rows="3"></textarea>
+          <textarea class="form-control" id="group_name" rows="1"></textarea>
         </div>
         <div class="invalid-feedback">
           合コン名を入力してください
@@ -110,7 +110,8 @@
       </div>
 
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color:#4ab4c8;border:none">合コンを作成！</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit"
+      style="background-color:#4ab4c8;border:none;margin:5vh 0">合コンを作成！</button>
     </form>
   </div>
 {% endblock %}
