@@ -13,11 +13,10 @@
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
     <div class="box">
-        <div class="row">
-            <div class="col-md-12">
+
+
               <body background="/assets/img/top_image.jpg" style="background-size:cover"></body>
-            </div>
-        </div>
+        
     </div>
     <!-- <div class="row"> -->
         <!-- <div class="col-sm-12"> -->
@@ -32,7 +31,8 @@
                   好みの条件で検索！
                 </p>
               </button>
-              <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:3vh 5vw;">
+              <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:3vh 5vw;"
+              onclick="location.href = '/make_group/'">
                 <h2 style="margin:3vh 3vw;">合コンを開く</h2>
                 <p>
                   合コンを手軽に企画！
