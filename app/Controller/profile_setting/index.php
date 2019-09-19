@@ -14,8 +14,13 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
 
 $app->post('/profile_setting/', function (Request $request, Response $response) {
 
-  $data = [];
+    //POSTされた内容を取得します
+    $data = $request->getParsedBody();
 
-  return $this->view->render($response, 'profile_setting/index.twig', $data);
+    //ユーザーDAOをインスタンス化
+    $group = new User($this->db);
+
+    //DBに登録をする。戻り値は自動発番されたIDが返ってきます
+    $id = $group->insert($data);
 
 });
