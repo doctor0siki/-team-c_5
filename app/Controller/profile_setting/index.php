@@ -11,3 +11,11 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
     // Render index view
     return $this->view->render($response, 'profile_setting/index.twig', $data);
 });
+
+$app->post('/profile_setting/', function (Request $request, Response $response) {
+
+  $data = [];
+
+  return $this->view->render($response, 'profile_setting/index.twig', $data);
+
+});
