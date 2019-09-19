@@ -2,6 +2,7 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Model\Dao\User;
 
 // グループ作成画面ページのコントローラ
 $app->get('/profile_setting/', function (Request $request, Response $response) {
