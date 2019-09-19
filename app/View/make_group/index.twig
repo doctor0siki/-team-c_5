@@ -9,8 +9,8 @@
     <div class="row">
       <div class="col-md-4 mb-3">
         <div class="form-group">
-          <label for="gougon-name">合コン名</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <label for="goukon-name">合コン名</label>
+          <textarea class="form-control" id="group_name" rows="3"></textarea>
         </div>
         <div class="invalid-feedback">
           合コン名を入力してください
@@ -19,7 +19,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="kaisaibi">開催日</label>
-        <select class="custom-select d-block w-100" id="country" required>
+        <select class="custom-select d-block w-100" id="event_date" required>
           <option value="">Choose...</option>
           <option value="2019/09/19">2019/09/19</option>
           <option value="2019/09/20">2019/09/20</option>
@@ -32,7 +32,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="kibou-nennrei">希望する年齢層</label>
-        <select class="custom-select d-block w-100" id="state" required>
+        <select class="custom-select d-block w-100" id="age_group" required>
           <option value="">Choose...</option>
           <option value="20~25">20~25</option>
           <option value="25~30">25~30</option>
@@ -46,7 +46,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="kaisaitiiki">開催地域</label>
-        <select class="custom-select d-block w-100" id="state" required>
+        <select class="custom-select d-block w-100" id="area" required>
           <option value="">Choose...</option>
           <option value="東京">東京</option>
           <option value="大阪">大阪</option>
@@ -59,7 +59,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="saidaininnzuu">最大人数</label>
-        <select class="custom-select d-block w-100" id="state" required>
+        <select class="custom-select d-block w-100" id="max_people" required>
           <option value="">Choose...</option>
           <option value="3人">3人</option>
           <option value="5人">5人</option>
@@ -72,7 +72,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="meyasukakaku">目安価格</label>
-        <select class="custom-select d-block w-100" id="state" required>
+        <select class="custom-select d-block w-100" id="price" required>
           <option value="">Choose...</option>
           <option value="5000円">5000円</option>
           <option value="8000円">8000円</option>
@@ -85,7 +85,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="entertainer">招待するエンターテイナー</label>
-        <select class="custom-select d-block w-100" id="state" required>
+        <select class="custom-select d-block w-100" id="entertainer" required>
           <option value="">Choose...</option>
           <option value="催眠術師">催眠術師</option>
           <option value="漫談家">漫談家</option>
