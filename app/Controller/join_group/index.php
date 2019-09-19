@@ -2,6 +2,7 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Model\Dao\Group;
 
 // グループ作成画面ページのコントローラ
 $app->get('/join_group/', function (Request $request, Response $response) {
