@@ -10,104 +10,92 @@
       <div class="col-md-4 mb-3">
         <div class="form-group">
           <label for="goukon-name">合コン名</label>
-          <textarea class="form-control" id="group_name" rows="3"></textarea>
-        </div>
-        <div class="invalid-feedback">
-          合コン名を入力してください
+          <textarea class="form-control" name="group_name" rows="3"></textarea>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kaisaibi">開催日</label>
-        <select class="custom-select d-block w-100" id="event_date" required>
-          <option value="">Choose...</option>
-          <option value="2019/09/19">2019/09/19</option>
-          <option value="2019/09/20">2019/09/20</option>
-          <option value="2019/09/21">2019/09/21</option>
-        </select>
-        <div class="invalid-feedback">
-          開催日を選択してください
+        <div class="form-group">
+          <label for="kaisaibi">開催日</label>
+          <select class="custom-select d-block w-100" name="event_date">
+            <option value="">Choose...</option>
+            <option value="2019/09/19">2019/09/19</option>
+            <option value="2019/09/20">2019/09/20</option>
+            <option value="2019/09/21">2019/09/21</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kibou-nennrei">希望する年齢層</label>
-        <select class="custom-select d-block w-100" id="age_group" required>
-          <option value="">Choose...</option>
-          <option value="20~25">20~25</option>
-          <option value="25~30">25~30</option>
-          <option value="30~35">30~35</option>
-          <option value="35~40">35~40</option>
-        </select>
-        <div class="invalid-feedback">
-          希望する年齢層を選択してください
+        <div class="form-group">
+          <label for="kibou-nennrei">希望する年齢層</label>
+          <select class="custom-select d-block w-100" name="age_group">
+            <option value="">Choose...</option>
+            <option value="20~25">20~25</option>
+            <option value="25~30">25~30</option>
+            <option value="30~35">30~35</option>
+            <option value="35~40">35~40</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kaisaitiiki">開催地域</label>
-        <select class="custom-select d-block w-100" id="area" required>
-          <option value="">Choose...</option>
-          <option value="東京">東京</option>
-          <option value="大阪">大阪</option>
-          <option value="名古屋">名古屋</option>
-        </select>
-        <div class="invalid-feedback">
-          開催地域を選択してください
+        <div class="form-group">
+          <label for="kaisaitiiki">開催地域</label>
+          <select class="custom-select d-block w-100" name="area">
+            <option value="">Choose...</option>
+            <option value="東京">東京</option>
+            <option value="大阪">大阪</option>
+            <option value="名古屋">名古屋</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="saidaininnzuu">最大人数</label>
-        <select class="custom-select d-block w-100" id="max_people" required>
-          <option value="">Choose...</option>
-          <option value="3人">3人</option>
-          <option value="5人">5人</option>
-          <option value="10人">10人</option>
-        </select>
-        <div class="invalid-feedback">
-          最大人数を選択してください
+        <div class="form-group">
+          <label for="saidaininnzuu">最大人数</label>
+          <select class="custom-select d-block w-100" name="max_people">
+            <option value="">Choose...</option>
+            <option value="3人">3人</option>
+            <option value="5人">5人</option>
+            <option value="10人">10人</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="meyasukakaku">目安価格</label>
-        <select class="custom-select d-block w-100" id="price" required>
-          <option value="">Choose...</option>
-          <option value="5000円">5000円</option>
-          <option value="8000円">8000円</option>
-          <option value="10000円">10000円</option>
-        </select>
-        <div class="invalid-feedback">
-          目安目安を選択してください
+        <div class="form-group">
+          <label for="meyasukakaku">目安価格</label>
+          <select class="custom-select d-block w-100" name="price">
+            <option value="">Choose...</option>
+            <option value="5000円">5000円</option>
+            <option value="8000円">8000円</option>
+            <option value="10000円">10000円</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="entertainer">招待するエンターテイナー</label>
-        <select class="custom-select d-block w-100" id="entertainer" required>
-          <option value="">Choose...</option>
-          <option value="催眠術師">催眠術師</option>
-          <option value="漫談家">漫談家</option>
-          <option value="マジシャン">マジシャン</option>
-        </select>
-        <div class="invalid-feedback">
-          Please provide a valid state.
+        <div class="form-group">
+          <label for="entertainer">招待するエンターテイナー</label>
+          <select class="custom-select d-block w-100" name="entertainer">
+            <option value="">Choose...</option>
+            <option value="催眠術師">催眠術師</option>
+            <option value="漫談家">漫談家</option>
+            <option value="マジシャン">マジシャン</option>
+          </select>
         </div>
       </div>
 
       <div class="col-md-4 mb-3">
         <div class="form-group">
           <label for="goukon-pr">合コンPR</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="invalid-feedback">
-          Please provide a valid state.
+          <textarea class="form-control" name="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
       </div>
 
       <hr class="mb-4">
       <button class="btn btn-primary btn-lg btn-block" type="submit">合コンを作成！</button>
-    </form>
-  </div>
+    </div>
+  </form>
 {% endblock %}
