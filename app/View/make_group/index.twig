@@ -4,12 +4,15 @@
 {% endblock %}
 
 {% block page_content %}
+<h1 style="text-align:center">
+  合コンを作成
+</h1>
   <form id="makeGroup" method="POST" action="/make_group/">
 
     <div class="row">
       <div class="col-md-4 mb-3">
         <div class="form-group">
-          <label for="goukon-name">合コン名</label>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">合コン名</label>
           <textarea class="form-control" id="group_name" rows="3"></textarea>
         </div>
         <div class="invalid-feedback">
@@ -18,9 +21,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kaisaibi">開催日</label>
+        <label for="kaisaibi" style="border-left: solid 10px #4ab4c8;padding-left:3px;">開催日</label>
         <select class="custom-select d-block w-100" id="event_date" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="2019/09/19">2019/09/19</option>
           <option value="2019/09/20">2019/09/20</option>
           <option value="2019/09/21">2019/09/21</option>
@@ -31,9 +34,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kibou-nennrei">希望する年齢層</label>
+        <label for="kibou-nennrei" style="border-left: solid 10px #4ab4c8;padding-left:3px;">希望する年齢層</label>
         <select class="custom-select d-block w-100" id="age_group" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="20~25">20~25</option>
           <option value="25~30">25~30</option>
           <option value="30~35">30~35</option>
@@ -45,9 +48,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="kaisaitiiki">開催地域</label>
+        <label for="kaisaitiiki" style="border-left: solid 10px #4ab4c8;padding-left:3px;">開催地域</label>
         <select class="custom-select d-block w-100" id="area" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="東京">東京</option>
           <option value="大阪">大阪</option>
           <option value="名古屋">名古屋</option>
@@ -58,9 +61,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="saidaininnzuu">最大人数</label>
+        <label for="saidaininnzuu" style="border-left: solid 10px #4ab4c8;padding-left:3px;">最大人数</label>
         <select class="custom-select d-block w-100" id="max_people" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="3人">3人</option>
           <option value="5人">5人</option>
           <option value="10人">10人</option>
@@ -71,9 +74,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="meyasukakaku">目安価格</label>
+        <label for="meyasukakaku" style="border-left: solid 10px #4ab4c8;padding-left:3px;">目安価格</label>
         <select class="custom-select d-block w-100" id="price" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="5000円">5000円</option>
           <option value="8000円">8000円</option>
           <option value="10000円">10000円</option>
@@ -84,9 +87,9 @@
       </div>
 
       <div class="col-md-4 mb-3">
-        <label for="entertainer">招待するエンターテイナー</label>
+        <label for="entertainer" style="border-left: solid 10px #4ab4c8;padding-left:3px;">招待するエンターテイナー</label>
         <select class="custom-select d-block w-100" id="entertainer" required>
-          <option value="">Choose...</option>
+          <option value="">未選択</option>
           <option value="催眠術師">催眠術師</option>
           <option value="漫談家">漫談家</option>
           <option value="マジシャン">マジシャン</option>
@@ -98,7 +101,7 @@
 
       <div class="col-md-4 mb-3">
         <div class="form-group">
-          <label for="goukon-pr">合コンPR</label>
+          <label for="goukon-pr" style="border-left: solid 10px #4ab4c8;padding-left:3px;">合コンPR</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="invalid-feedback">
@@ -107,7 +110,7 @@
       </div>
 
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">合コンを作成！</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color:#4ab4c8;border:none">合コンを作成！</button>
     </form>
   </div>
 {% endblock %}
