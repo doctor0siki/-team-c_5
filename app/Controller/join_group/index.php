@@ -21,7 +21,6 @@ $app->post('/join_group/', function (Request $request, Response $response) {
     //ユーザーDAOをインスタンス化
     $group = new Group($this->db);
 
-    //DBに登録をする。戻り値は自動発番されたIDが返ってきます
-    $id = $group->insert($data);
+    $result = $group->select($data,"","",1,false)
 
 });
