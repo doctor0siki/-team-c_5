@@ -69,21 +69,37 @@ body {
 }
 </style>
 
-<body style="position:fixed">
+<div class="panel panel-default">
+  <div class="chat-header border-bottom" style="">
+
+    <h1 class="panel-title"><i class="fas fa-chevron-left float-left"></i>合コングループ名</h1>
+  </div>
+
+  <div class="panel-body">
+      <div id='chat'></div>
+  </div>
+</div>
+
+<div class="row" style="text-align:center">
+    <textarea rows="2" id="txt" class="form-control col-md-10" placeholder="Shift+Enterで送信" style="margin:0 2px;"></textarea>
+    <button type="button" class="btn btn-info chat-btn col-md-1" style="background-color:#4ab4c8;border:none">送信</button>
+</div>
+
+<!-- <body style="position:fixed">
 <div class="panel panel-default">
     <div class="panel-heading">
       <i class="fas fa-chevron-left fa-2x"></i>
-        <h1 class="panel-title">合コングループ名</h1>
+      <h1 class="panel-title">合コングループ名</h1>
     </div>
     <div class="panel-body">
         <div id='chat'></div>
     </div>
 </div>
-<div class='inputText'>
-    <textarea rows="3" id="txt" class="form-control" placeholder="Shift+Enterで送信"></textarea>
+<div class="row" style="text-align:center">
+    <textarea rows="2" id="txt" class="form-control" placeholder="Shift+Enterで送信" style="width:70vw;margin:0 2px;"></textarea>
     <button type="button" class="btn btn-info chat-btn" style="background-color:#4ab4c8;border:none">送信</button>
 </div>
-</body>
+</body> -->
 
 <script>
 function getBotSpeech() {

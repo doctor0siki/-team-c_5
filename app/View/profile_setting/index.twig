@@ -82,7 +82,7 @@ $(function(){
                             </div>
                             <div class="form-group">
                                 <label for="password" class="control-label"> 性別</label>
-                                <select class="form-control" id="sex" name="sex" value="{{ session.user_info.sex }}">
+                                <select class="form-control" id="sex" name="sex" value="{{ session.user_info.sex }}" required title="Please enter your name">
                                   <option>男</option>
                                   <option>女</option>
                                 </select>
