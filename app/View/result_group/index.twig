@@ -2,7 +2,7 @@
 {% extends "layout/layout.twig" %}
 
 {#HTMLのタイトルを定義します。#}
-{% block title %}RESULT{% endblock %}
+{% block title %}グループ検索結果{% endblock %}
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}
@@ -21,7 +21,8 @@
 
 </style>
 <div class="reserchbox"style="width:100%;">
-  <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;">
+  <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;"
+  onclick="location.href = '/join_group/'">
     <i class="fas fa-search"></i>
     再検索
   </button>

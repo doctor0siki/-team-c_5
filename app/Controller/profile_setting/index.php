@@ -28,4 +28,6 @@ $app->post('/profile_setting/', function (Request $request, Response $response) 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $group->insert($data);
 
+    return $this->view->render($response, 'top', $data);
+
 });

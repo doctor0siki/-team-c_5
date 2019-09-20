@@ -1,0 +1,143 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}チャット{% endblock %}
+
+{# 適用させたいスタイルシートのパスを指定します #}
+{% block header_scripts_add %}
+    {# 背景動画を表示させるスタイルを読み込みます。#}
+
+{% endblock %}
+
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+<style>
+body {
+  /* width:400px; */
+  margin: 0px;
+  min-width: 100%;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic Pro", "Lucida Grande", Verdana, Arial, Meiryo, "メイリオ", sans-serif;
+}
+.panel-title{
+  text-align: center;
+  font-size: 20px;
+  border-bottom: 2px;
+  border-color: black;
+  width:100%;
+  height:40px;
+}
+
+.panel {
+  margin: 0;
+  background-image: url("../images/background_sky.jpg");
+}
+
+.panel-body {
+  height: 400px;
+  overflow: auto;
+}
+
+.chatBox {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.chatBalloon {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+.bot {
+  float: left;
+  display: inline-block;
+}
+
+.usr {
+  float: right;
+  color: white;
+  background-color: #df614a;
+}
+
+.inputText {
+  text-align: right;
+}
+</style>
+
+<body style="position:fixed">
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <i class="fas fa-chevron-left fa-2x"></i>
+        <h1 class="panel-title">合コングループ名</h1>
+    </div>
+    <div class="panel-body">
+        <div id='chat'></div>
+    </div>
+</div>
+<div class='inputText'>
+    <textarea rows="3" id="txt" class="form-control" placeholder="Shift+Enterで送信"></textarea>
+    <button type="button" class="btn btn-info chat-btn" style="background-color:#4ab4c8;border:none">送信</button>
+</div>
+</body>
+
+<script>
+function getBotSpeech() {
+　　　　　　　　// 入力したテキストを取得
+
+  var inputText = $('#txt').val();
+  if(inputText.length<1)
+  return;
+
+　　　　　　　　// 入力したテキストをチャット画面に表示
+  var messageMine = $("<div class='chatBox'><div class='usr chatBalloon'>" + esc(inputText) + "</div></div>");
+
+    $('#chat').append(messageMine);
+
+
+　　　　　　　　
+　　　　　　　　　// botの返答を取得＆表示
+  $.ajax({
+      // パラメータで文言を送信
+      url: "ここにbotの文言を取得するURLを入力?text=" + encodeURI(inputText),
+      type: "GET",
+      async: true,
+      cache: false
+  }).done(function(data) {
+　　　　　　　　　　　　　　　　// 返答をチャット画面に表示
+      var chat = $("<div class='chatBox'><div class='bot chatBalloon'>" + esc(data) + "</div></div>");
+      $('#chat').append(chat);
+  }).fail(function(data) {}).always(function(data) {});
+　　　　　　　　
+  //返答したらテキストボックスは空に
+  $('#txt').val('').focus();
+}
+
+function esc(s) {
+  return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+}
+
+function clickHandler(e) {
+  getBotSpeech();
+}
+
+function textareaHandler(e) {
+  if (!(e.keyCode == 13 && e.shiftKey)) return;
+  getBotSpeech();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+　　　　// 送信ボタンをおしたとき
+  document.querySelector('.chat-btn').addEventListener('click', clickHandler);
+　　　　// Shift + Enterでも送信できるように
+  document.querySelector('#txt').addEventListener('keyup', textareaHandler);
+});
+</script>
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+{% block footer_scripts_add %}{% endblock %}
