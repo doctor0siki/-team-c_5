@@ -1,0 +1,52 @@
+{#レイアウトを継承します#}
+{% extends "layout/layout.twig" %}
+
+{#HTMLのタイトルを定義します。#}
+{% block title %}更新完了{% endblock %}
+
+{# このページに適用させたいスタイルシートを指定します #}
+{% block header_scripts_add %}
+{% endblock %}
+
+{#ここから表示したい情報を記載します。#}
+{% block page_content %}
+    <div class="page-header text-center">
+        <h1>プロフィールの更新が完了しました</h1>
+    </div>
+    <div class="updated-contents">
+      <li>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">メールアドレス</label>
+          <p>{{session.user_info.email}}</p>
+        </ul>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">ニックネーム</label>
+          <p>{{session.user_info.name}}</p>
+        </ul>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">性別</label>
+          <p>{{session.user_info.sex}}</p>
+        </ul>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">年齢</label>
+          <p>{{session.user_info.age}}</p>
+        </ul>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">電話番号</label>
+          <p>{{session.user_info.tel}}</p>
+        </ul>
+        <ul>
+          <label for="goukon-name" style="border-left: solid 10px #4ab4c8;padding-left:3px;">自己PR</label>
+          <p>{{session.user_info.pr}}</p>
+        </ul>
+      </li>
+
+    </div>
+    <p class="text-center">
+        <a href="/" class="btn btn-info" style="background-color:#df614a;border:none">TOPへ</a>
+    </p>
+
+{% endblock %}
+
+{#共通フッタとして追記したい情報を記載します。#}
+{% block footer_scripts_add %}{% endblock %}

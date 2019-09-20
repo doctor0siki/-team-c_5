@@ -9,7 +9,7 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
 
     $data = [];
 
-    $group = new User($this->db);
+    $user = new User($this->db);
 
     //$result = $group->select($data,date,DESC,5,false);
 
@@ -19,15 +19,26 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
 
 $app->post('/profile_setting/', function (Request $request, Response $response) {
 
+    $data = $this->session["user_info"];
+
     //POSTされた内容を取得します
-    $data = $request->getParsedBody();
+    $upd = $request->getParsedBody();
+
+    $upd["id"] = $data["id"];
+
+    //dd($upd);
 
     //ユーザーDAOをインスタンス化
-    $group = new User($this->db);
+    $user = new User($this->db);
+
+    //DB登録に必要ない情報は削除します
+    unset($upd["password_re"]);
 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
-    $id = $group->insert($data);
+    $user->update($upd);
 
-    return $this->view->render($response, 'top', $data);
+    $this->session->set('user_info',$upd);
+    
+    return $this->view->render($response, 'profile_setting/done.twig', $upd);
 
 });
