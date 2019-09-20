@@ -46,7 +46,11 @@
             <div class="card-footer">
                 <div class="float-right">
                     <small class="text-muted">現在の参加：男 1/3人 女 0/3人</small>
-                    <button type="button" class="btn btn-primary" style="background-color:#df614a;border:none;margin:0 2vw;">参加</button>
+                    <form action="/chat_group/" method="POST" enctype="application/x-www-form-urlencoded">
+                        <input type="hidden" name="id" value={{ list.id }}>
+                        <input type="hidden" name="group_name" value={{ list.group_name }}>
+                        <button type="submit" class="btn btn-primary" style="background-color:#df614a;border:none;margin:0 2vw;">参加</button>
+                    </form>
                 </div>
             </div>
         </div>
