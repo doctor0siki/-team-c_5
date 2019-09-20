@@ -24,8 +24,12 @@ $app->post('/join_group/', function (Request $request, Response $response) {
 
     $param["area"] = $data["area"];
 
-    $result = $community->select($param,event_date,DESC,5,false);
+    $result = $community->select($param,event_date,DESC,5,true);
 
-    return $this->view->render($response,'result_group/index.twig',$result);
+    $info["result"] = $result;
+
+    //dd($result);
+
+    return $this->view->render($response,'result_group/index.twig',$info);
 
 });

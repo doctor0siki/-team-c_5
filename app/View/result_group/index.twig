@@ -22,27 +22,26 @@
     <div class="reserchbox" style="width:100%;">
         <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;" onclick="location.href = '/join_group/'">
             <i class="fas fa-search"></i>
-            {{group_name}}
+            再検索
         </button>
     </div>
-    {% set lists = [
 
-{'id':0, 'title':"合コン１",'text':"PRの文章っっっっっっっっっっっっっっっっっっっっ"},
-{'id':1, 'title':"合コン２",'text':"あああああああああああああああああああああああああああ"},
-{'id':2, 'title':"合コン３",'text':"おおおおおおおおおおおおおおおおお"},
-]%}
-
-    {% for list in lists %}
+    {% for list in result %}
         <div class="card" style="margin:3vh auto">
             <div class="card-body">
-                <h5 class="card-title">{{list.title}}</h5>
-                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">日付</span>
-                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">年齢層</span>
-                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催地域</span>
-                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">価格</span>
+                <h5 class="card-title">{{list.group_name}}</h5>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催日 :
+                    {{ list.event_date }}</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">年齢層 :
+                    {{ list.age_group }}歳</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催地域 :
+                    {{ list.area }}</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">予算 :
+                    {{ list.price }}</span>
                 <br>
-                <span class="badge badge-pill badge-primary " id="entame" style="background-color:#df614a;">エンターテイナー</span>
-                <p class="card-text" style="height:15vh">{{list.text}}</p>
+                <span class="badge badge-pill badge-primary " id="entame" style="background-color:#df614a;">エンターテイナー :
+                    {{ list.entertainer }}</span>
+                <p class="card-text" style="height:15vh">{{list.pr}}</p>
             </div>
             <div class="card-footer">
                 <div class="float-right">
