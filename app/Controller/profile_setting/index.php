@@ -24,17 +24,21 @@ $app->post('/profile_setting/', function (Request $request, Response $response) 
     //POSTされた内容を取得します
     $upd = $request->getParsedBody();
 
+    $upd["id"] = $data["id"];
+
+    //dd($upd);
+
     //ユーザーDAOをインスタンス化
     $user = new User($this->db);
 
     //DB登録に必要ない情報は削除します
     unset($upd["password_re"]);
 
-    $upd["id"] = $data["id"];
-
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
-    $id = $user->update($upd);
+    $user->update($upd);
 
+    $this->session->set('user_info',$upd);
+    
     return $this->view->render($response, 'profile_setting/done.twig', $upd);
 
 });
