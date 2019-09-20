@@ -7,53 +7,54 @@
 
 {# 適用させたいスタイルシートのパスを指定します #}
 {% block header_scripts_add %}{# 背景動画を表示させるスタイルを読み込みます。#}
-  <!-- <link href="/assets/css/video.css" rel="stylesheet"> -->
+    <!-- <link href="/assets/css/video.css" rel="stylesheet"> -->
 {% endblock %}
 
 {#ここから表示したい情報を記載します。#}
 {% block page_content %}
-  <style>
+    <style>
 
-    .badge {
-      font-size: 16px;
-      margin: 2vh 0;
-    }
-  </style>
-  <div class="reserchbox" style="width:100%;">
-    <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;" onclick="location.href = '/join_group/'">
-      <i class="fas fa-search"></i>
-      再検索
-    </button>
-  </div>
-
-  {% for list in result %}
-    <div class="card" style="margin:3vh auto">
-      <div class="card-body">
-        <h5 class="card-title">{{list.group_name}}</h5>
-        <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催日 :
-          {{ list.event_date }}</span>
-        <span class="badge badge-pill badge-primary" style="background-color:#df614a;">年齢層 :
-          {{ list.age_group }}歳</span>
-        <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催地域 :
-          {{ list.area }}</span>
-        <span class="badge badge-pill badge-primary" style="background-color:#df614a;">予算 :
-          {{ list.price }}</span>
-        <br>
-        <span class="badge badge-pill badge-primary " id="entame" style="background-color:#df614a;">エンターテイナー :
-          {{ list.entertainer }}</span>
-        <p class="card-text" style="height:15vh">{{list.pr}}</p>
-      </div>
-      <div class="card-footer">
-        <div class="float-right">
-          <small class="text-muted">現在の参加：男 1/3人 女 0/3人</small>
-          <form action="/chat_group/" method="POST" enctype="application/x-www-form-urlencoded">
-            <input type="hidden" name="id" value={{ list.id }}>
-            <button type="submit" class="btn btn-primary" style="background-color:#df614a;border:none;margin:0 2vw;">参加</button>
-          </form>
-        </div>
-      </div>
+        .badge {
+            font-size: 16px;
+            margin: 2vh 0;
+        }
+    </style>
+    <div class="reserchbox" style="width:100%;">
+        <button type="button" class="btn btn-primary" style="background-color:#4ab4c8;border:none;margin:2vw;right:0;" onclick="location.href = '/join_group/'">
+            <i class="fas fa-search"></i>
+            再検索
+        </button>
     </div>
-  {% endfor %}
+
+    {% for list in result %}
+        <div class="card" style="margin:3vh auto">
+            <div class="card-body">
+                <h5 class="card-title">{{list.group_name}}</h5>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催日 :
+                    {{ list.event_date }}</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">年齢層 :
+                    {{ list.age_group }}歳</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">開催地域 :
+                    {{ list.area }}</span>
+                <span class="badge badge-pill badge-primary" style="background-color:#df614a;">予算 :
+                    {{ list.price }}</span>
+                <br>
+                <span class="badge badge-pill badge-primary " id="entame" style="background-color:#df614a;">エンターテイナー :
+                    {{ list.entertainer }}</span>
+                <p class="card-text" style="height:15vh">{{list.pr}}</p>
+            </div>
+            <div class="card-footer">
+                <div class="float-right">
+                    <small class="text-muted">現在の参加：男 1/3人 女 0/3人</small>
+                    <form action="/chat_group/" method="POST" enctype="application/x-www-form-urlencoded">
+                        <input type="hidden" name="id" value={{ list.id }}>
+                        <input type="hidden" name="group_name" value={{ list.group_name }}>
+                        <button type="submit" class="btn btn-primary" style="background-color:#df614a;border:none;margin:0 2vw;">参加</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
 
 {#共通フッタとして追記したい情報を記載します。#}
