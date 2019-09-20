@@ -19,6 +19,8 @@ $app->get('/profile_setting/', function (Request $request, Response $response) {
 
 $app->post('/profile_setting/', function (Request $request, Response $response) {
 
+    $data = $this->session["user_info"];
+    
     //POSTされた内容を取得します
     $data = $request->getParsedBody();
 
