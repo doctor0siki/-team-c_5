@@ -22,7 +22,7 @@ $app->post('/join_group/', function (Request $request, Response $response) {
     //ユーザーDAOをインスタンス化
     $community = new Community($this->db);
 
-    $result = $community->select($data,date,DESC,5,false);
+    $result = $community->select($data,event_date,DESC,5,false);
 
     return $result->view->render($response,'result_group/index.twig',$data);
 
