@@ -28,6 +28,9 @@ $app->post('/profile_setting/', function (Request $request, Response $response) 
     //DBに登録をする。戻り値は自動発番されたIDが返ってきます
     $id = $group->update($data);
 
+    //DB登録に必要ない情報は削除します
+    unset($data["password_re"]);
+
     return $this->view->render($response, 'profile_setting/done.twig', $data);
 
 });
